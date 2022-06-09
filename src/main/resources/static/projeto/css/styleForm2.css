@@ -1,0 +1,166 @@
+*{
+	top: 0px;
+	left: 2px;
+	font-family: 'Poppins', sans-serif;
+	font-size: 15px;
+}
+
+.navbar{
+	position: fixed;
+	width: 100%;
+	top: -60px;
+	left: 0;
+	right: 0;
+	z-index: 99;
+	transform: translateY(60px);
+	transition: transform 500ms ease, background 500ms ease;
+	-webkit-transition: transform 500ms ease, background 500ms ease;
+	box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.1);	
+	background-color: white!important;
+}
+
+
+.navbar-expand-lg .navbar-nav .nav-link {
+	display: block;
+	color: #555555;
+	line-height: 30px;
+	font-size: 15px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	text-align: center;
+	align-items: center;
+	padding-right: 2rem;
+	padding-left: 2rem;
+}
+
+.navbar-brand img{
+	width: 8rem;
+	padding-top: 10px;
+	padding-left: 1rem;
+}
+
+.navbar-collapse{
+	text-align: center;
+	align-items: center;
+}
+
+nav a:hover{
+	color: #1BBFBF !important;
+}
+
+footer{
+	width: 100%;
+	margin-bottom: 0px;
+    background-position: center;
+    background-size: cover;
+    padding: 60px 10px;
+    background: url('footerform.png') no-repeat;
+}
+
+.icon-contato{
+	color: #D9F0F0;
+}
+
+.btn-success {
+	color: #fff;
+	background:linear-gradient(to right, #0D83C2 10%, #9BCEEA 180%);
+	border-color: #0D83C2;
+	width: 140px;
+	height: 48px;
+	font-size: 15px;
+	font-family: Poppins-Medium, Poppins;
+	text-transform: capitalize;
+	margin: 0 20px;
+	margin-top: 15px;
+    margin-bottom: 20px;	
+}
+
+.btn-success:hover{
+	color: #0D83C2 !important;
+	background: #fff !important;
+	border-color: #0D83C2 !important;
+}
+
+.btn-success:focus,
+.btn-success.focus {
+	box-shadow: 0 0 0 0rem rgba(248, 249, 250, 0.5);
+	border-color: #0D83C2;
+	background:linear-gradient(to right, #0D83C2 10%, #9BCEEA 180%);
+}
+
+.btn-success:not(:disabled):not(.disabled):active:focus,
+.btn-success:not(:disabled):not(.disabled).active:focus,
+.show>.btn-success.dropdown-toggle:focus {
+	box-shadow: 0 0 0 0 rgba(248, 249, 250, 0.5);
+	border-color: #0D83C2;
+}
+
+.nav-item {
+	margin: 0 10px;
+}
+
+#section3 h1, h2{
+	text-align: center;
+	margin-top: 2rem;
+	margin-bottom: 3rem;
+	text-shadow: white 0.1em 0.1em 0.2em;
+}
+
+#section3 {
+	padding: 40px 15px;
+	margin-top: 0px;
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	margin-bottom: -15rem;
+}
+
+
+#section3 div.form-container{
+	position: relative;
+	display: flex;
+	width: 90%;
+  	justify-content: center;
+  	margin-top: auto;
+  	margin-bottom: 15rem;
+}
+
+#section3 div.form-container form{
+	margin-top: 20px;
+	background-color: #FFFFFF;
+  	border-radius: 10px;
+	box-shadow: #0000001c 0 0 30px;
+	margin-bottom: 50px;
+	padding: 50px;
+	width: 100%;
+	max-width: 620px;
+	text-align: left;
+
+}
+
+#section3 div.form-container form  #input-content{
+	display: grid;
+  	grid-template-columns: repeat(minmax(200px, 1fr));
+}
+
+
+#section3 div.form-container form .input-container textarea{
+  	resize: none;
+  	font-family: inherit;
+}
+#section3 div.form-container form .input-container input, select, textarea{
+  	width: 100%;
+  	font-size: 1.2rem;
+  	color: #777777;
+  	padding: 10px 0;
+  	margin-bottom: 30px;
+  	text-align: left;
+  	outline: none;
+  	border: none;
+  	border-bottom: #777777 1px solid;
+}
+
+#section3 div.form-container form .input-container input:focus, select:focus, textarea:focus{
+  	border-bottom: #222222 1px solid;
+}
+

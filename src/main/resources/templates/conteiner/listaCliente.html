@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+	  xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="hhtp://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<title>Conteiners</title>
+	<link rel="shortcut icon" href="projeto\images\favicon.ico">
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+	<link href="projeto\css\style.css" rel="stylesheet"/>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-expand-lg bg-light">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#"> <img src="projeto\images\logo.png" alt="Logotipo Porto"></a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Página Inicial</a></li>
+						<li class="nav-item"><a class="nav-link" href="/cadastrocliente">Cadastrar Cliente</a></li>
+						<li class="nav-item"><a class="nav-link" href="/listaCliente">Cadastrar Conteiners</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<br><br><br><br><br>	
+	<div class="container">
+		<h3>Lista de Clientes</h3>
+		<table class="table">
+			<thead>
+ 				<tr>
+					<th scope="col">Cliente</th>
+				  	<th scope="col">Rg</th>
+				  	<th scope="col">Email</th>
+	  				<th scope="col">Função</th>
+  				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="cliente : ${clientes}">
+					<td><a th:href="@{/{rg}(rg = ${cliente.rg}) }"><span th:text ="${cliente.nome}"></span></a></td>
+					<td><span th:text ="${cliente.rg}"></span></td>
+					<td><span th:text ="${cliente.email}"></span></td>
+					<td><a th:href="@{/deletarCliente/{rg}(rg = ${cliente.rg}) }"><i class="far fa-trash-alt"></i></a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<br><br><br><br><br>	
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="single-footer-widget">
+						<br>
+						<h6>
+						<b>Contact Us</b>
+						</h6>
+						<a href="#" class="icon-contato"><i class="fa fa-phone" aria-hidden="true"></i></a>11955550000
+						<br> 
+						<a href="#" class="icon-contato"><i class="fa fa-map-marker" aria-hidden="true"></i></a> São Paulo-SP 
+						<br> 
+						<a href="#" class="icon-contato"><i class="fa fa-envelope" aria-hidden="true"></i></a>TransCont.com
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>			
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="projeto\js\script.js"></script>
+</body>
+</html>

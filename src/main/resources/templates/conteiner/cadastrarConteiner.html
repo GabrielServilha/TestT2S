@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+	  xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="hhtp://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<title>Conteiners</title>
+	<link rel="shortcut icon" href="projeto\images\favicon.ico">
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+	<link href="projeto\css\styleForm2.css" rel="stylesheet"/>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-expand-lg bg-light">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#"> <img
+					src="projeto\images\logo.png" alt="Logotipo Porto">
+				</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item"><a class="nav-link active" aria-current="page" href="/">Página Inicial</a></li>
+						<li class="nav-item"><a class="nav-link" href="/cadastrocliente">Cadastrar Cliente</a></li>
+						<li class="nav-item"><a class="nav-link" href="/listaCliente">Cadastrar Conteiners</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<br><br><br><br><br>	
+	<div class="container">
+		<h3>Lista de Clientes</h3>
+		<table class="table">
+			<tbody>
+				<tr th:each="cliente : ${cliente}">
+					<td><span th:text ="${cliente.nome}"></span></td>
+					<td><span th:text ="${cliente.email}"></span></td>
+					<td><span th:text ="${cliente.rg}"></span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<section class="section" id="section3">
+		<h1>Realize o Cadastro Do Conteiner</h1>
+		<div class="form-container mx-auto text-center">
+			<form method="post">
+	   			<div id="input-content">
+	     			<div class="input-container">
+	     		 		<label for="name">Número do Conteiner</label>
+	       				<input required type="text" name="numeroConteiner" placeholder="4 letras e 7 numeros EX:ABCD1234567">
+	     			</div>
+	            <div>
+	            	<p><b>Tipo</b></p>
+		            <input required type="radio" name="tipo" value="20">
+		            <label for = "tipo">20</label>
+		            <input required type="radio" name="tipo" value="40">
+		            <label for = "tipo">40</label>
+	            </div>
+	
+	            <div>
+	            	<p><b>Status</b></p>
+		            <input required type="radio" name="status" value="Cheio">
+		            <label for = "status">Cheio</label>
+		            <input required type="radio" name="status" value="Vazio">
+		            <label for = "status">Vazio</label>
+	            </div>
+	       
+	            <div>
+	            	<p><b>Categoria</b></p>
+		            <input required type="radio" name="categoria" value="Importação">
+		            <label for = "categoria">Importação</label>
+		            <input required type="radio" name="categoria" value="Exportação">
+		            <label for = "categoria">Exportação</label>
+	            </div>
+	            <br>
+	             <div>
+	                <p><b>Tipo Movimentação</b></p>
+		           	<select name="tipoMov" id="tipoMov">
+						<option value="pesagem">Pesagem</option>
+						<option value="reposicionamento">Reposicionamento</option>
+						<option value="scanner">Scanner</option>
+						<option value="embarque">Embarque</option>
+						<option value="desembarque">Desembarque</option>
+						<option value="gatein">Gate In</option>
+						<option value="gateout">Gate Out</option>
+					</select>
+	            </div>
+	            <div>
+	                <p><b>Data e Horário do Inicio</b></p>
+		            <input required type="time" name="horaIni" value="Hora">
+		            <label for = "horaIni">Horário</label>
+		            <input required type="date" name="dataIni" value="Data">
+		            <label for = "dataIni">Data</label>
+	            </div>
+	            <div>
+	                <p><b>Data e Hora do Fim</b></p>
+		            <input required type="time" name="horaFim" value="Hora">
+		            <label for = "horaFim">Horário</label>
+		            <input required type="date" name="dataFim" value="Data">
+		            <label for = "dataFim">Data</label>
+	            </div>
+	            <button type="submit" class="btn btn-success btn-lg mx-auto text-center">Salvar</button>
+				</div>
+			</form>
+		</div>
+	</section>
+	<div class="container">
+		<h3>Lista de Conteiners</h3>
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Número Do Conteiner</th>
+					<th scope="col">Data Início</th>
+					<th scope="col">Data Fim</th>
+					<th scope="col">Função</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="conteiners : ${conteiners}">
+					<td><a th:href="@{/detalhesConteiner/{codigo}(codigo = ${conteiners.codigo}) }"><span th:text ="${conteiners.numeroConteiner}"></span></a></td>
+					<td><span th:text ="${conteiners.dataIni}"></span></td>
+					<td><span th:text ="${conteiners.dataFim}"></span></td>
+					<td><a th:href="@{/deletarConteiner/{codigo}(codigo = ${conteiners.codigo})}"><i class="far fa-trash-alt"></i></a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<br><br>
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="single-footer-widget">
+						<br>
+						<h6>
+						<b>Contact Us</b>
+						</h6>
+						<a href="#" class="icon-contato"><i class="fa fa-phone" aria-hidden="true"></i></a>11955550000
+						<br> 
+						<a href="#" class="icon-contato"><i class="fa fa-map-marker" aria-hidden="true"></i></a> São Paulo-SP 
+						<br> 
+						<a href="#" class="icon-contato"><i class="fa fa-envelope" aria-hidden="true"></i></a>TransCont.com
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="projeto\js\script.js"></script>
+</body>
+</html>

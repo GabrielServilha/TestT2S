@@ -1,0 +1,155 @@
+*{
+	top: 0px;
+	left: 2px;
+	font-family: 'Poppins', sans-serif;
+	font-size: 15px;
+}
+
+.navbar{
+	position: fixed;
+	width: 100%;
+	top: -60px;
+	left: 0;
+	right: 0;
+	z-index: 99;
+	transform: translateY(60px);
+	transition: transform 500ms ease, background 500ms ease;
+	-webkit-transition: transform 500ms ease, background 500ms ease;
+	box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.1);	
+	background-color: white!important;
+}
+
+
+.header_one.navbar_fixed .navbar .nav .nav-item .nav-link {
+	line-height: 20px;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+	display: block;
+	color: #555555;
+	line-height: 30px;
+	font-size: 15px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	text-align: center;
+	align-items: center;
+	padding-right: 2rem;
+	padding-left: 2rem;
+}
+
+.navbar-brand img{
+	width: 8rem;
+	padding-top: 10px;
+	padding-left: 1rem;
+}
+
+.navbar-collapse{
+	text-align: center;
+	align-items: center;
+}
+
+nav a:hover{
+	color: #1BBFBF !important;
+}
+
+footer{
+	width: 100%;
+	margin-top: 4rem;
+	margin-bottom: 0px;
+    background-position: center;
+    background-size: cover;
+    padding: 60px 10px;
+    background: url('footer.png') no-repeat;
+}
+
+.icon-contato{
+	color: #D9F0F0;
+}
+
+.footer-social a {
+  display: inline-block;
+  position: relative;
+  margin-right: 6px;
+  background-color: #D3D3D3;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.footer-social a.facebook {
+  line-height: 45px;
+  background: rgb(99,98,215);
+  background: linear-gradient(24deg, rgba(99,98,215,1) 0%, rgba(255,143,226,1) 100%);
+}
+.footer-social a.twitter {
+  line-height: 45px;
+  background: rgb(0,181,108);
+  background: linear-gradient(24deg, rgba(0,181,108,1) 0%, rgba(29,190,117,1) 32%, rgba(104,213,140,1) 58%, rgba(158,230,157,1) 93%);
+}
+.footer-social a.linkedin {
+line-height: 45px;
+background: rgb(255,154,182);
+background: linear-gradient(41deg, rgba(255,154,182,1) 18%, rgba(240,50,149,1) 47%, rgba(240,50,149,1) 90%);
+}
+.footer-social a.instagram {
+  line-height: 45px;
+background: rgb(240,147,118);
+background: linear-gradient(27deg, rgba(240,147,118,1) 70%, rgba(240,219,121,1) 100%);
+}
+.single-footer-widget ul li a:hover {
+  color: #856DD7;
+  text-decoration: none;
+}
+
+.footer-social i, .footer-social span {
+  font-size: 17px;
+  color:#fff;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.about-lado1 .img-fluid{
+	width: 410px;
+	height: 80%;
+	margin-top: 1rem;
+	float: right;
+}
+
+#about1{
+	margin:0 auto;
+	margin-top: 50px;
+	position: relative;
+	margin-left: 50px;
+	margin-right: 50px;
+	text-align: justify;
+}
+
+h2 span{
+	font-weight: bold;
+	text-transform: capitalize;
+}
+
+.about-lado2 .img-fluid{
+	width: 410px;
+	height: 90%;
+	float: left;
+}
+
+#about2{
+	margin:0 auto;
+	position: relative;
+	text-align: justify;
+	margin-right: 70px;
+	margin-left: 70px;
+}
+
